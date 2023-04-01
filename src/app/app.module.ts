@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgxSpinnerModule } from "ngx-spinner";
+import { AutenticarGuard } from './guards/autenticar.guard';
 
 
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PasswordRecoverComponent } from './components/password-recover/password-recover.component';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { PasswordRecoverComponent } from './components/password-recover/password
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    PasswordRecoverComponent
+    PasswordRecoverComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,9 @@ import { PasswordRecoverComponent } from './components/password-recover/password
     NgxSpinnerModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [
+    AutenticarGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
