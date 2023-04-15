@@ -4,7 +4,6 @@ import { AutenticarService } from 'src/app/services/autenticar.service';
 import { AutenticarRequest } from 'src/app/models/autenticar.request.model';
 import { AutenticarHelper } from 'src/app/helpers/autenticar.helper';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,7 +23,7 @@ export class LoginComponent {
     private autenticarService: AutenticarService,
     private autenticarHelper: AutenticarHelper,
     private spinner: NgxSpinnerService,
-    private router: Router
+
   ) {
   }
 
@@ -68,7 +67,7 @@ export class LoginComponent {
       .subscribe({
         next: (data) => {
           this.autenticarHelper.signIn(data);
-          this.router.navigate(['/dashboard']);
+          window.location.href = '/dashboard';
         },
         error: (e) => {
           this.mensagem = e.error.message;

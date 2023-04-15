@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { AutenticarGuard } from './guards/autenticar.guard';
+import { ChartModule } from 'angular-highcharts';
 
 
 import { AppComponent } from './app.component';
@@ -14,6 +15,9 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PasswordRecoverComponent } from './components/password-recover/password-recover.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { CadastrarContatosComponent } from './components/admin/cadastrar-contatos/cadastrar-contatos.component';
+import { ConsultarContatosComponent } from './components/admin/consultar-contatos/consultar-contatos.component';
+import { EditarContatosComponent } from './components/admin/editar-contatos/editar-contatos.component';
 
 
 @NgModule({
@@ -23,7 +27,10 @@ import { DashboardComponent } from './components/admin/dashboard/dashboard.compo
     LoginComponent,
     RegisterComponent,
     PasswordRecoverComponent,
-    DashboardComponent
+    DashboardComponent,
+    CadastrarContatosComponent,
+    ConsultarContatosComponent,
+    EditarContatosComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +40,7 @@ import { DashboardComponent } from './components/admin/dashboard/dashboard.compo
     HttpClientModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
+    ChartModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
@@ -41,5 +49,6 @@ import { DashboardComponent } from './components/admin/dashboard/dashboard.compo
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
 
 

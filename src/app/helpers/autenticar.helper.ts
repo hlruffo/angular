@@ -28,4 +28,26 @@ export class AutenticarHelper {
     isSignedIn(): boolean {
         return localStorage.getItem(this.auth_usuario) != null;
     }
+
+
+    /*
+        método para retornar os dados
+        gravados na local storage
+    */
+
+    getData(): AutenticarResponse|null{
+      let data = localStorage.getItem(this.auth_usuario);
+      if(data != null)
+        return JSON.parse(data) as AutenticarResponse;
+      else
+        return null;
+    }
+
+     /*
+        método paraapagar o conteudo
+        gravados na local storage
+    */
+   signOut():void{
+    localStorage.removeItem(this.auth_usuario)
+   }
 }
